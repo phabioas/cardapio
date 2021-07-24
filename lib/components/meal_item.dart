@@ -1,4 +1,5 @@
 import 'package:cardapio/models/meal.dart';
+import 'package:cardapio/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class MealItem extends StatelessWidget {
@@ -8,12 +9,19 @@ class MealItem extends StatelessWidget {
     required this.meal,
   });
 
-  void _selectMeal() {}
+  void _selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(
+      AppRoutes.MEAL_DETAIL,
+      arguments: meal, // Passando a receita via argumento para a página
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectMeal,
+      onTap: () {
+        _selectMeal(context);
+      },
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),

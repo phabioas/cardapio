@@ -1,5 +1,6 @@
 import 'package:cardapio/screens/categories_meals_screen.dart';
-import 'package:cardapio/screens/categories_screen.dart';
+import 'package:cardapio/screens/meal_detail_screen.dart';
+import 'package:cardapio/screens/tabs-screen.dart';
 import 'package:flutter/material.dart';
 
 import 'utils/app_routes.dart';
@@ -22,10 +23,35 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'RobotoCondensed',
                 ),
               )),
-      home: CategoriesScreens(),
       routes: {
+        AppRoutes.HOME: (ctx) => TabsScreen(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
+        AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
       },
+      // onGenerateRoute: (settings) {
+      //   // Caso não encontre a rota. É uma forma de lhe dar com quebras de rotas
+      //   switch (settings.name) {
+      //     case 'alguma-coisa':
+      //       return null;
+      //     case 'outra-coisa':
+      //       return null;
+      //     default:
+      //       return MaterialPageRoute(
+      //         builder: (_) {
+      //           return CategoriesScreens();
+      //         },
+      //       );
+      //   }
+      // },
+      // onUnknownRoute: (settings) {
+      //   // Rotas dinamicas
+      //   // Páginas de erro
+      //   return MaterialPageRoute(
+      //         builder: (_) {
+      //           return CategoriesScreens();
+      //         },
+      //       );
+      // },
     );
   }
 }

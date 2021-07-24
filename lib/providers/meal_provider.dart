@@ -1,4 +1,3 @@
-import 'package:cardapio/components/category_item.dart';
 import 'package:cardapio/models/meal.dart';
 
 class MealProvider {
