@@ -1,5 +1,6 @@
 import 'package:cardapio/screens/categories_meals_screen.dart';
 import 'package:cardapio/screens/meal_detail_screen.dart';
+import 'package:cardapio/screens/settings_screen.dart';
 import 'package:cardapio/screens/tabs-screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.HOME: (ctx) => TabsScreen(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(),
       },
       // onGenerateRoute: (settings) {
       //   // Caso não encontre a rota. É uma forma de lhe dar com quebras de rotas

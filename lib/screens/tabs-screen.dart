@@ -1,3 +1,4 @@
+import 'package:cardapio/components/main_drawer.dart';
 import 'package:cardapio/screens/categories_screen.dart';
 import 'package:cardapio/screens/favorite_screen.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         title: Text(_screens[_selectedScreenIndex]['title'] as String),
       ),
+      drawer: MainDrawer(),
       body: _screens[_selectedScreenIndex]['screen'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectScreen,
