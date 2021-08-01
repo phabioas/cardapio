@@ -31,7 +31,7 @@ class TabsScreenCopy extends StatelessWidget {
         body: TabBarView(
           children: [
             CategoriesScreens(),
-            FavoriteScreen(),
+            FavoriteScreen([]),
           ],
         ),
       ),

@@ -1,9 +1,14 @@
 import 'package:cardapio/components/main_drawer.dart';
+import 'package:cardapio/models/meal.dart';
 import 'package:cardapio/screens/categories_screen.dart';
 import 'package:cardapio/screens/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabsScreen extends StatefulWidget {
+  List<Meal> favoriteMeals;
+
+  TabsScreen(this.favoriteMeals);
+
   @override
   _TabsScreenState createState() => _TabsScreenState();
 }
@@ -11,16 +16,23 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedScreenIndex = 0;
 
-  final List<Map<String, Object>> _screens = [
-    {
-      'title': 'Lista de Categoria',
-      'screen': CategoriesScreens(),
-    },
-    {
-      'title': 'Favoritos',
-      'screen': FavoriteScreen(),
-    },
-  ];
+  late List<Map<String, Object>> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _screens = [
+      {
+        'title': 'Lista de Categoria',
+        'screen': CategoriesScreens(),
+      },
+      {
+        'title': 'Favoritos',
+        'screen': FavoriteScreen(widget.favoriteMeals),
+      },
+    ];
+  }
 
   _selectScreen(int index) {
     setState(() {
